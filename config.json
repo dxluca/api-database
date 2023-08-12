@@ -1,0 +1,5 @@
+{
+	"authorization": "yes",
+	"port": 8080,
+	"file": "database.json"
+}
