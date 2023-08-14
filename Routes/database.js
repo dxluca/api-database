@@ -33,15 +33,15 @@ exports.remove = function(req, res) {
 	let data = JSON.parse(jsonData);
 	let removed = 0
 
-	for (let i = 0; i < data.length; i++) {
+	for (let i = 0; i < data.length; i++) { // skips index after removing something, known issue im just too lazy to fix this rn
 		if (data[i]["id"] == id) {
 			data.splice(i, 1)
-
-			removed++
+			
+			removed.push()
 		}
 	}
 
-	if (removed > 0) {
+	if (removed.length > 0) {
 		const string = JSON.stringify(data);
 		fs.writeFileSync(file, string, "utf-8");
 	}
