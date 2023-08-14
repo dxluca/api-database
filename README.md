@@ -11,7 +11,7 @@ The key can be changed in the config.json file.
 ### GET: /api/get
 Returns database content as JSON string.
 Response:
-```
+```json
 [
   {
     "id": "key",
@@ -29,7 +29,7 @@ Response:
 Add something to the database
 
 Body format:
-```
+```json
 {
   "id": "key",
   "data": "value"
@@ -37,7 +37,7 @@ Body format:
 ```
 
 Response:
-```
+```json
 [
   {
     "success": "true",
@@ -59,18 +59,21 @@ Response:
 Remove stuff from the database
 
 Body format:
-```
+```json
 {
   "id": "key"
 }
 ```
 
 Response:
-```
+```json
 [
   {
     "success": "true",
-    "removed": 1, (Number of removed items)
+    "removed": {
+      "id": "key",
+      "data": "value"
+    },
     "data": []
   }
 ]
